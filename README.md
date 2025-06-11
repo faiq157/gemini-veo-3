@@ -23,12 +23,7 @@ Since the actual API isn't publicly available, a high-fidelity simulation of the
 - Built with **Next.js 14**, **Tailwind CSS**, and **shadcn/ui**
 - Form validation via **React Hook Form** + **Zod**
 - Lottie animations integrated with **react-lottie-player**
-
-###  Realistic API Simulation
-- Console-logged prompt engineering
-- Simulated processing delays (5–8 seconds)
-- Returns mock video from `/public/mock-videos`
-
+- 
 ###  Advanced Architecture
 - Mocked API layer ready for real Veo3 integration
 - Asynchronous backend design
@@ -60,16 +55,16 @@ Since the actual API isn't publicly available, a high-fidelity simulation of the
 │   ├── api/generate-video/
 │   │   ├── real-estate/route.ts
 │   │   └── suplimax/route.ts
-│   ├── components/
+│   ├── real-estate/page.tsx
+│   ├── suplimax/page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
 │   │   ├── ui/
 │   │   ├── Header.tsx
 │   │   ├── LottieAnimation.tsx
 │   │   ├── RealEstateForm.tsx
 │   │   └── VideoPlayer.tsx
-│   ├── real-estate/page.tsx
-│   ├── suplimax/page.tsx
-│   ├── layout.tsx
-│   └── page.tsx
 ├── public/
 │   └── mock-videos/
 └── services/
@@ -78,8 +73,8 @@ Since the actual API isn't publicly available, a high-fidelity simulation of the
 
 ## Clone the Repo
 ```bash
-git clone https://github.com/your-username/veo3-demo-mvp.git
-cd veo3-demo-mvp
+git clone https://github.com/faiq157/gemini-veo-3.git
+cd gemini-veo-3
 ```
 ## Install Dependencies
 ```bash 
