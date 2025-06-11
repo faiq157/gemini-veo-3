@@ -27,9 +27,6 @@ interface SuplimaxFormProps {
   onSubmit: (data: FormValues) => void;
   isLoading: boolean;
 }
-
-// FIX 2: Add the "export" keyword before "function".
-// This makes the component available for other files to import.
 export function SuplimaxForm({ onSubmit, isLoading }: SuplimaxFormProps) {
   const { register, handleSubmit, control, formState: { errors } } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -102,7 +99,7 @@ export function SuplimaxForm({ onSubmit, isLoading }: SuplimaxFormProps) {
           </div>
         </CardContent>
         <CardFooter>
-          <Button type="submit" disabled={isLoading} className="w-full">
+          <Button type="submit" disabled={isLoading} className="w-full mt-3">
             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {isLoading ? 'Generating...' : 'Generate Video'}
           </Button>

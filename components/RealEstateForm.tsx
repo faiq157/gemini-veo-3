@@ -120,7 +120,7 @@ export function RealEstateForm({ onSubmit, isLoading }: RealEstateFormProps) {
           </div>
         </CardContent>
         <CardFooter>
-          <Button type="submit" disabled={isLoading} className="w-full">
+          <Button type="submit" disabled={isLoading} className="w-full mt-3">
             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
             Generate Virtual Tour
           </Button>
