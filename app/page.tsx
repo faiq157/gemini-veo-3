@@ -8,9 +8,7 @@ function App() {
 
   return (
     <div >
-      {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-12">
-        {/* Header section */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-2xl shadow-lg">
@@ -39,12 +37,12 @@ function App() {
             onMouseLeave={() => setHoveredCard(null)}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-            
-            <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 h-full shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
-              <div className="flex flex-col items-center text-center h-full">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-2xl mb-6 shadow-lg">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
+          
+          <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 h-full shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
+            <div className="flex flex-col items-center text-center h-full">
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-2xl mb-6 shadow-lg">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
                 
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Marketing Video Generator
@@ -72,12 +70,12 @@ function App() {
             onMouseLeave={() => setHoveredCard(null)}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-            
-            <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 h-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
-              <div className="flex flex-col items-center text-center h-full">
-                <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 rounded-2xl mb-6 shadow-lg">
-                  <Home className="w-8 h-8 text-white" />
-                </div>
+          
+          <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 h-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
+            <div className="flex flex-col items-center text-center h-full">
+              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 rounded-2xl mb-6 shadow-lg">
+                <Home className="w-8 h-8 text-white" />
+              </div>
                 
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Real Estate Video Tour
@@ -96,11 +94,9 @@ function App() {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
         <div className="mt-16 text-center">
           <p className="text-slate-400 text-sm">
-            Powered by Google's Gemini (Veo3) • Built with React & Tailwind CSS
+            Powered by Faiq Ahmad (Veo3) • Built with Next & Tailwind CSS
           </p>
         </div>
       </div>

@@ -13,8 +13,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Loader2 } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 
-// NEW: Define a comprehensive schema for all user inputs.
-// z.coerce.number() is used to automatically convert string input from the form to a number for validation.
 const formSchema = z.object({
   address: z.string().min(10, "Please enter a valid address."),
   price: z.string().min(1, "Price is required."),
@@ -25,7 +23,6 @@ const formSchema = z.object({
   tourStyle: z.string().min(1, "Please select a tour style."),
 });
 
-// The type is now inferred from the full schema
 type FormValues = z.infer<typeof formSchema>;
 
 interface RealEstateFormProps {
@@ -33,7 +30,6 @@ interface RealEstateFormProps {
   isLoading: boolean;
 }
 
-// Data from the brief is now used for default values, not static text.
 const defaultPropertyDetails = {
   address: "12012 Crest Ct, Beverly Hills, CA 90210",
   price: "$10,183,985",
@@ -47,7 +43,6 @@ const defaultPropertyDetails = {
 export function RealEstateForm({ onSubmit, isLoading }: RealEstateFormProps) {
   const { register, control, handleSubmit, formState: { errors } } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    // Pre-fill the form with the required property details
     defaultValues: defaultPropertyDetails,
   });
 
@@ -56,7 +51,7 @@ export function RealEstateForm({ onSubmit, isLoading }: RealEstateFormProps) {
   };
 
   return (
-    <Card className="w-full">
+    <Card className="w-full bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
       <CardHeader>
         <CardTitle>Virtual Tour Generator</CardTitle>
         <CardDescription>
@@ -65,14 +60,11 @@ export function RealEstateForm({ onSubmit, isLoading }: RealEstateFormProps) {
       </CardHeader>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <CardContent className="space-y-4">
-          {/* Address Input */}
           <div className="space-y-2">
             <Label htmlFor="address">Property Address</Label>
             <Input id="address" {...register('address')} />
             {errors.address && <p className="text-sm text-red-500">{errors.address.message}</p>}
           </div>
-
-          {/* Grid for numerical details */}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="price">Price</Label>
@@ -96,14 +88,11 @@ export function RealEstateForm({ onSubmit, isLoading }: RealEstateFormProps) {
             </div>
           </div>
           
-          {/* Features Textarea */}
           <div className="space-y-2">
             <Label htmlFor="features">Key Features</Label>
             <Textarea id="features" placeholder="e.g., Luxury estate, three-car garage..." {...register('features')} />
             {errors.features && <p className="text-sm text-red-500">{errors.features.message}</p>}
           </div>
-
-          {/* Tour Style Select */}
           <div className="space-y-2">
             <Label>Tour Style</Label>
             <Controller name="tourStyle" control={control} render={({ field }) => (

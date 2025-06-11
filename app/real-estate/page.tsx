@@ -41,7 +41,6 @@ export default function RealEstatePage() {
       return <LoadingState />;
     }
     if (videoUrl) {
-      // For the download, we can make the filename more specific
       const downloadFilename = `tour-12012-crest-ct-${Date.now()}.mp4`;
       return <VideoPlayer src={videoUrl} onGenerateNew={() => setVideoUrl(null)} downloadFilename={downloadFilename} />;
     }

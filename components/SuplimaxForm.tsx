@@ -1,7 +1,3 @@
-// app/components/SuplimaxForm.tsx
-
-// FIX 1: Add this directive at the VERY TOP of the file.
-// This tells Next.js that this component uses hooks and interactivity.
 'use client';
 
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
@@ -43,7 +39,7 @@ export function SuplimaxForm({ onSubmit, isLoading }: SuplimaxFormProps) {
   };
 
   return (
-    <Card className="w-full">
+    <Card className="w-full bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl">
       <CardHeader>
         <CardTitle>Create Your Ad</CardTitle>
         <CardDescription>Fill in the details below to generate your video.</CardDescription>
