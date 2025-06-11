@@ -43,7 +43,7 @@ Since the actual API isn't publicly available, a high-fidelity simulation of the
 | UI Components     | shadcn/ui                              |
 | Form Management   | React Hook Form & Zod                  |
 | Animations        | Lottie via `react-lottie-player`       |
-| Deployment        | Vercel                                 |
+                           
 
 ---
 
