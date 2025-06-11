@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Video Generation Showcase (Google Veo3 Demo)
 
-## Getting Started
+>  *This project is a conceptual demonstration using mock APIs. The Google Veo3 API is not yet publicly available.*
 
-First, run the development server:
+## Overview
+
+This is a full-stack web application built to showcase the future of AI-generated video content using Google’s Veo3 model. The demo highlights two specific use cases:
+
+1. **Marketing Ad Generator for “Suplimax” Energy Drink**
+2. **Real Estate Virtual Tour Generator**
+
+Since the actual API isn't publicly available, a high-fidelity simulation of the API is included to demonstrate the full development architecture, UX, and backend prompt engineering capabilities.
+
+---
+
+##  Key Features
+
+###  Two Use Cases
+- **Marketing Ad Generator:** Input key features for a fictional *Suplimax* energy drink to generate a 15-second commercial.
+- **Real Estate Tour Generator:** Input property details to produce a 60-second virtual house tour.
+
+###  Dynamic & Interactive UI
+- Built with **Next.js 14**, **Tailwind CSS**, and **shadcn/ui**
+- Form validation via **React Hook Form** + **Zod**
+- Lottie animations integrated with **react-lottie-player**
+
+###  Realistic API Simulation
+- Console-logged prompt engineering
+- Simulated processing delays (5–8 seconds)
+- Returns mock video from `/public/mock-videos`
+
+###  Advanced Architecture
+- Mocked API layer ready for real Veo3 integration
+- Asynchronous backend design
+- Blueprint for job status polling via job ID
+
+---
+
+## 🛠️ Technology Stack
+
+| Area              | Technology                            |
+|-------------------|----------------------------------------|
+| Framework         | Next.js 14 (App Router)                |
+| Language          | TypeScript                             |
+| Frontend          | React                                  |
+| Backend           | Node.js (via Next.js API Route Handlers)|
+| Styling           | Tailwind CSS                           |
+| UI Components     | shadcn/ui                              |
+| Form Management   | React Hook Form & Zod                  |
+| Animations        | Lottie via `react-lottie-player`       |
+| Deployment        | Vercel                                 |
+
+---
+
+##  Project Architecture
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+/
+├── app/
+│   ├── api/generate-video/
+│   │   ├── real-estate/route.ts
+│   │   └── suplimax/route.ts
+│   ├── components/
+│   │   ├── ui/
+│   │   ├── Header.tsx
+│   │   ├── LottieAnimation.tsx
+│   │   ├── RealEstateForm.tsx
+│   │   └── VideoPlayer.tsx
+│   ├── real-estate/page.tsx
+│   ├── suplimax/page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/
+│   └── mock-videos/
+└── services/
+    └── gemini.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Clone the Repo
+```bash
+git clone https://github.com/your-username/veo3-demo-mvp.git
+cd veo3-demo-mvp
+```
+## Install Dependencies
+```bash 
+npm install 
+```
+## Set Up Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash 
+# For real API integration (optional)
+# GCP_PROJECT_ID="your-gcp-project-id"
+# GCP_LOCATION="us-central1"
+# GCS_OUTPUT_BUCKET="your-gcs-bucket-name"
+# GOOGLE_APPLICATION_CREDENTIALS="./path/to/your/service-account-key.json"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Run the Development Server
+```bash
+pnpm dev
+# or
+npm run dev
