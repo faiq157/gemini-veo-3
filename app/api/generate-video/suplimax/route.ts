@@ -5,7 +5,6 @@ export async function POST(req: NextRequest) {
   try {
     const { features, tone, targetAudience, videoStyle } = await req.json();
 
-    // Directly create the video prompt without image reference
     const videoPrompt = `Create a 15-second, high-energy marketing video for the "Suplimax" energy drink.
     - Style: ${videoStyle}, cinematic.
     - Tone: ${tone}.
@@ -16,7 +15,9 @@ export async function POST(req: NextRequest) {
     - Use dynamic camera movements, lens flares, and a driving electronic soundtrack.
     - End with the "Suplimax" logo and the tagline: "Unlock Your Potential."`;
 
-    const result = await generateVideoWithVeo3({ prompt: videoPrompt });
+     const mockVideoUrl = '/mock-videos/energydrink.mp4';
+    const result = await generateVideoWithVeo3({ prompt: videoPrompt }, mockVideoUrl);
+    
     return NextResponse.json(result);
 
   } catch (error) {
