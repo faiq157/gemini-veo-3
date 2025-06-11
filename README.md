@@ -42,7 +42,7 @@ Since the actual API isn't publicly available, a high-fidelity simulation of the
 | Styling           | Tailwind CSS                           |
 | UI Components     | shadcn/ui                              |
 | Form Management   | React Hook Form & Zod                  |
-| Animations        | Lottie via `react-lottie-player`       |
+
                            
 
 ---
